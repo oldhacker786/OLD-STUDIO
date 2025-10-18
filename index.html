@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLD-STUDIO | Join Our Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --darker: #0a0f1c;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --card-bg: rgba(30, 41, 59, 0.5);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 40px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .divider {
+            height: 3px;
+            width: 80px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 0 auto 40px;
+            border-radius: 3px;
+        }
+
+        /* Platform Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .platform-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .platform-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.1);
+            font-size: 2.2rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover .platform-logo {
+            background: rgba(99, 102, 241, 0.2);
+            transform: scale(1.1);
+        }
+
+        .platform-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .platform-handle {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .join-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .join-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+        }
+
+        .join-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-text {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .platform-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .platform-card:nth-child(1) { animation-delay: 0.1s; }
+        .platform-card:nth-child(2) { animation-delay: 0.2s; }
+        .platform-card:nth-child(3) { animation-delay: 0.3s; }
+        .platform-card:nth-child(4) { animation-delay: 0.4s; }
+        .platform-card:nth-child(5) { animation-delay: 0.5s; }
+        .platform-card:nth-child(6) { animation-delay: 0.6s; }
+        .platform-card:nth-child(7) { animation-delay: 0.7s; }
+        .platform-card:nth-child(8) { animation-delay: 0.8s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .brand-logo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/1z476m6q/Black-White-Minimalist-Business-Logo.png" alt="OLD-STUDIO Logo" class="brand-logo">
+                <h1 class="logo-text">OLD-STUDIO</h1>
+            </div>
+            <p class="tagline">CONNECT WITH US ACROSS ALL PLATFORMS AND JOIN OUR GROWING COMMUNITY OF CREATORS AND ENTHUSIASTS</p>
+            <div class="divider"></div>
+        </header>
+        
+        <div class="platforms-grid">
+            <!-- WHATSAPP CHANNEL -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2 class="platform-name">WHATSAPP CHANNEL</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://whatsapp.com/channel/0029VavHzv259PwTIz1XxJ09" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> JOIN CHANNEL 
+                </a>
+            </div>
+            
+            <!-- WHATSAPP GROUP -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="platform-name">WHATSAPP GROUP</h2>
+                <p class="platform-handle">TEAM BLACK HAT</p>
+                <a href="https://chat.whatsapp.com/JDyHu8PVMeY7GDZ5PJ3aAL?mode=ems_copy_t" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> JOIN GROUP 
+                </a>
+            </div>
+            
+            <!-- FACEBOOK -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <h2 class="platform-name">FACEBOOK</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://www.facebook.com/profile.php?id=61582688841199" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW PAGE 
+                </a>
+            </div>
+            
+            <!-- YOUTUBE -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h2 class="platform-name">YOUTUBE</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://youtube.com/@old-studio-786?si=saBrhNYjJ0NGYTcz" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> SUBSCRIBE 
+                </a>
+            </div>
+            
+            <!-- INSTAGRAM -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h2 class="platform-name">INSTAGRAM</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://youtube.com/@old-studio-786?si=saBrhNYjJ0NGYTcz" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+            
+            <!-- TIKTOK -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <h2 class="platform-name">TIKTOK</h2>
+                <p class="platform-handle">KASHI KING 👑</p>
+                <a href="https://www.tiktok.com/@kashi.king.rost5?_t=ZS-90e4min8Woe&_r=1" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+            
+            <!-- SNAPCHAT -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-snapchat"></i>
+                </div>
+                <h2 class="platform-name">SNAPCHAT</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://www.tiktok.com/@kashi.king.rost5?_t=ZS-90e4min8Woe&_r=1" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> ADD FRIEND
+                </a>
+            </div>
+            
+            <!-- GITHUB -->
+            <div class="platform-card">
+                <div class="platform-logo">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h2 class="platform-name">GITHUB</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://github.com/oldhacker786" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="footer-text">© 2025 OLD-STUDIO. ALL RIGHTS RESERVED.</p>
+            <p>STAY CONNECTED WITH US ACROSS ALL PLATFORMS</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/oldhacker786" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add subtle interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.platform-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
