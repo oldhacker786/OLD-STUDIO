@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLD-STUDIO | Join Our Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #667eea;
+            --accent-hover: #5a6fd8;
+            --text: #333;
+            --text-secondary: #666;
+            --success: #28a745;
+            --whatsapp: #25D366;
+            --twitter: #1DA1F2;
+            --email: #EA4335;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --glow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brand-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 4px;
+            width: 120px;
+            background: white;
+            margin: 0 auto 40px;
+            border-radius: 2px;
+            opacity: 0.7;
+        }
+
+        /* Platform Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .platform-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .platform-card:hover::before {
+            left: 100%;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .platform-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            font-size: 2.2rem;
+            color: var(--primary);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-card:hover .platform-logo {
+            background: rgba(102, 126, 234, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Platform specific colors */
+        .platform-card.whatsapp .platform-logo {
+            color: var(--whatsapp);
+            background: rgba(37, 211, 102, 0.1);
+        }
+
+        .platform-card.twitter .platform-logo {
+            color: var(--twitter);
+            background: rgba(29, 161, 242, 0.1);
+        }
+
+        .platform-card.email .platform-logo {
+            color: var(--email);
+            background: rgba(234, 67, 53, 0.1);
+        }
+
+        .platform-card.facebook .platform-logo {
+            color: #1877F2;
+            background: rgba(24, 119, 242, 0.1);
+        }
+
+        .platform-card.youtube .platform-logo {
+            color: #FF0000;
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        .platform-card.instagram .platform-logo {
+            color: #E4405F;
+            background: rgba(228, 64, 95, 0.1);
+        }
+
+        .platform-card.tiktok .platform-logo {
+            color: #000000;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-card.snapchat .platform-logo {
+            color: #FFFC00;
+            background: rgba(255, 252, 0, 0.1);
+        }
+
+        .platform-card.github .platform-logo {
+            color: #181717;
+            background: rgba(24, 23, 23, 0.1);
+        }
+
+        .platform-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .platform-handle {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .join-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            width: 100%;
+            max-width: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .join-btn:hover::before {
+            left: 100%;
+        }
+
+        .join-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .join-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Platform specific button colors */
+        .platform-card.whatsapp .join-btn {
+            background: linear-gradient(135deg, var(--whatsapp), #128c7e);
+        }
+
+        .platform-card.twitter .join-btn {
+            background: linear-gradient(135deg, var(--twitter), #1a91da);
+        }
+
+        .platform-card.email .join-btn {
+            background: linear-gradient(135deg, var(--email), #d23f31);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        .footer-text {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation delays for cards */
+        .platform-card:nth-child(1) { animation-delay: 0.1s; }
+        .platform-card:nth-child(2) { animation-delay: 0.2s; }
+        .platform-card:nth-child(3) { animation-delay: 0.3s; }
+        .platform-card:nth-child(4) { animation-delay: 0.4s; }
+        .platform-card:nth-child(5) { animation-delay: 0.5s; }
+        .platform-card:nth-child(6) { animation-delay: 0.6s; }
+        .platform-card:nth-child(7) { animation-delay: 0.7s; }
+        .platform-card:nth-child(8) { animation-delay: 0.8s; }
+        .platform-card:nth-child(9) { animation-delay: 0.9s; }
+        .platform-card:nth-child(10) { animation-delay: 1.0s; }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 999;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .brand-logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .scroll-to-top {
+                bottom: 20px;
+                left: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/1z476m6q/Black-White-Minimalist-Business-Logo.png" alt="OLD-STUDIO Logo" class="brand-logo">
+                <h1 class="logo-text">OLD-STUDIO</h1>
+            </div>
+            <p class="tagline">CONNECT WITH US ACROSS ALL PLATFORMS AND JOIN OUR GROWING COMMUNITY OF CREATORS AND ENTHUSIASTS</p>
+            <div class="divider"></div>
+        </header>
+        
+        <div class="platforms-grid">
+            <!-- WHATSAPP CHANNEL -->
+            <div class="platform-card whatsapp">
+                <div class="platform-logo">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2 class="platform-name">WHATSAPP CHANNEL</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://whatsapp.com/channel/0029VavHzv259PwTIz1XxJ09" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> JOIN CHANNEL 
+                </a>
+            </div>
+            
+            <!-- WHATSAPP GROUP -->
+            <div class="platform-card whatsapp">
+                <div class="platform-logo">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="platform-name">WHATSAPP GROUP</h2>
+                <p class="platform-handle">TEAM BLACK HAT</p>
+                <a href="https://chat.whatsapp.com/JDyHu8PVMeY7GDZ5PJ3aAL?mode=ems_copy_t" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> JOIN GROUP 
+                </a>
+            </div>
+            
+            <!-- TWITTER -->
+            <div class="platform-card twitter">
+                <div class="platform-logo">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h2 class="platform-name">TWITTER</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://whatsapp.com/channel/0029VbAtNf6Likg7MJqCkp2d" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+            
+            <!-- EMAIL -->
+            <div class="platform-card email">
+                <div class="platform-logo">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="platform-name">EMAIL</h2>
+                <p class="platform-handle">oldstudio786fff@gmail.com</p>
+                <a href="mailto:oldstudio786fff@gmail.com" class="join-btn">
+                    <i class="fas fa-paper-plane"></i> SEND EMAIL 
+                </a>
+            </div>
+            
+            <!-- FACEBOOK -->
+            <div class="platform-card facebook">
+                <div class="platform-logo">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <h2 class="platform-name">FACEBOOK</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://www.facebook.com/profile.php?id=61582688841199" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW PAGE 
+                </a>
+            </div>
+            
+            <!-- YOUTUBE -->
+            <div class="platform-card youtube">
+                <div class="platform-logo">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h2 class="platform-name">YOUTUBE</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://youtube.com/@old-studio-786?si=saBrhNYjJ0NGYTcz" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> SUBSCRIBE 
+                </a>
+            </div>
+            
+            <!-- INSTAGRAM -->
+            <div class="platform-card instagram">
+                <div class="platform-logo">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h2 class="platform-name">INSTAGRAM</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://youtube.com/@old-studio-786?si=saBrhNYjJ0NGYTcz" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+            
+            <!-- TIKTOK -->
+            <div class="platform-card tiktok">
+                <div class="platform-logo">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <h2 class="platform-name">TIKTOK</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://www.tiktok.com/@oldstudio89?_r=1&_d=ekheg7jmm620dc&sec_uid=MS4wLjABAAAAD53osh-hBqJUyTY3NjpOY1vq8ZBAv6VdDikoEo10ErrHNgR1K9ygN3q-qwuDeEJ3&share_author_id=7562645133306856469&sharer_language=en&source=h5_m&u_code=f024fh8jb1a91h&timestamp=1760816103&user_id=7562645133306856469&sec_user_id=MS4wLjABAAAAD53osh-hBqJUyTY3NjpOY1vq8ZBAv6VdDikoEo10ErrHNgR1K9ygN3q-qwuDeEJ3&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7561038747896203024&share_link_id=92c14319-ae71-4c53-9454-ec135b712699&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+            
+            <!-- SNAPCHAT -->
+            <div class="platform-card snapchat">
+                <div class="platform-logo">
+                    <i class="fab fa-snapchat"></i>
+                </div>
+                <h2 class="platform-name">SNAPCHAT</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://www.tiktok.com/@kashi.king.rost5?_t=ZS-90e4min8Woe&_r=1" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> ADD FRIEND
+                </a>
+            </div>
+            
+            <!-- GITHUB -->
+            <div class="platform-card github">
+                <div class="platform-logo">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h2 class="platform-name">GITHUB</h2>
+                <p class="platform-handle">OLD-STUDIO</p>
+                <a href="https://github.com/oldhacker786" class="join-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> FOLLOW 
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="footer-text">© 2025 OLD-STUDIO. ALL RIGHTS RESERVED.</p>
+            <p>STAY CONNECTED WITH US ACROSS ALL PLATFORMS</p>
+            <div class="social-links">
+                <a href="https://whatsapp.com/channel/0029VbAtNf6Likg7MJqCkp2d" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/oldhacker786" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:oldstudio786fff@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'flex';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+               });
+        });
+
+        // Enhanced hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.platform-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Add animation to cards when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe all cards
+            document.querySelectorAll('.platform-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
